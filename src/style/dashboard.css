@@ -1,0 +1,227 @@
+/* dashboard.css */
+.dashboard {
+  padding: 2rem 0;
+  min-height: calc(100vh - 80px);
+  background: var(--gray-50);
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.user-welcome {
+  color: var(--neutral);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  color: var(--neutral);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-actions .action-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-actions .action-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-actions .action-card:hover::before {
+  transform: scaleX(1);
+}
+
+.dashboard-actions .action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.dashboard-actions .action-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.dashboard-actions h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--gray-800);
+  font-weight: 700;
+}
+
+.dashboard-actions p {
+  color: var(--neutral);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Dark theme for dashboard */
+[data-theme="dark"] .dashboard {
+  background: var(--gray-50);
+}
+
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .dashboard-actions .action-card {
+  background: var(--white);
+  border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .stat-card:hover,
+[data-theme="dark"] .dashboard-actions .action-card:hover {
+  border-color: var(--primary);
+}
+
+[data-theme="dark"] .user-welcome {
+  color: var(--neutral);
+}
+
+[data-theme="dark"] .stat-number {
+  color: var(--primary);
+}
+
+[data-theme="dark"] .stat-label {
+  color: var(--neutral);
+}
+
+[data-theme="dark"] .dashboard-actions h3 {
+  color: var(--gray-800);
+}
+
+[data-theme="dark"] .dashboard-actions p {
+  color: var(--neutral);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem 0;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .dashboard-actions {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dashboard-actions .action-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .dashboard-actions .action-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .dashboard-header {
+    text-align: center;
+  }
+}

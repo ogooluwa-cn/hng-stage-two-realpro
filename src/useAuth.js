@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import "./style/style.css";
 import Navbar from "./component/navbar";
-import Landing from "./pages/landing";
-import Login from "./pages/login";
-import Signup from "./pages/signup";
-import Dashboard from "./pages/dashboard";
-import Ticket from "./pages/ticket";
-import CreateTicket from "./pages/create-ticket";     
+import Landing from "./component/landing";
+import Login from "./component/login";
+import Signup from "./component/signup";
+import Dashboard from "./component/dashboard";
+import Ticket from "./component/ticket";
 import ProtectedRoute from "./component/ProtectedRoute";
 
 function App() {
@@ -43,14 +41,6 @@ function App() {
             element={
               <ProtectedRoute>
                 <Ticket />
-              </ProtectedRoute>
-            } 
-          />
-            <Route 
-            path="/pages/create-ticket"
-            element={
-              <ProtectedRoute>
-                <CreateTicket/>
               </ProtectedRoute>
             } 
           />
