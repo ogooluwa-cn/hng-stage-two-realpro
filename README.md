@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RealPro Ticket Management System
 
 A modern, responsive ticket management system built with React.
@@ -23,3 +24,6 @@ A modern, responsive ticket management system built with React.
 1. Clone the repository:
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+=======
+# hng-stage-two-realpro
+>>>>>>> 7b2d95e09ef2c186894fcd970e64c3d2749f6acc
